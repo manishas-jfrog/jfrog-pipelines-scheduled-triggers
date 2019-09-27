@@ -1,0 +1,18 @@
+resources:
+  - name: cron_trigger
+    type: CronTrigger
+    configuration:
+      interval: "*/2 * * * *"   # e.g. trigger every 2 mins, UTC time zone
+
+
+pipelines:
+  - name: pipeline_scheduled_triggers
+    steps:
+      - name: step_1_scheduled_triggers
+        type: Bash
+        configuration:
+          inputResources:
+            - name: cron_trigger
+        execution:
+          onExecute:
+            - printenv
