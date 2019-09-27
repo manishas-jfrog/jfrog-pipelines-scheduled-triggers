@@ -2,7 +2,7 @@ resources:
   - name: cron_trigger
     type: CronTrigger
     configuration:
-      interval: "*/2 * * * *"   # e.g. trigger every 2 mins, UTC time zone
+      interval: "0 */12 * * *"   # e.g. trigger every 2 mins, UTC time zone
 
 
 pipelines:
